@@ -9,6 +9,13 @@ function App(props) {
   const [positionLat, setPositionLat] = useState([]);
   
   const [positionLong, setPositionLong] = useState([]);
+
+  const getPos = () => {
+    const infos = data.courses[0].gps;
+    infos.map(el => setPositionLong(el.longitude) );
+    infos.map(el => setPositionLat(el.latitude) );
+    console.log(positionLong, 'ooooooooooooo')
+  };
   
   useEffect(() => {
     getPos();
@@ -25,14 +32,7 @@ function App(props) {
     //   backgroundColor: "red"
     // }
     
-    const getPos = () => {
-      const infos = data.courses[0].gps;
-      infos.map(el => setPositionLong(el.longitude) );
-      infos.map(el => setPositionLat(el.latitude) );
-      console.log(positionLong, 'ooooooooooooo')
-    };
-    
-    const Car = () => <img src={car} className="car-sprite" alt="car"/>;
+  const Car = () => <img src={car} className="car-sprite" alt="car"/>;
 
   return (
     <div style={{ height: '100vh', width: '100%' }}>
@@ -43,7 +43,6 @@ function App(props) {
         >
         <Car lat={positionLat} lng={positionLong}/>
         </GoogleMapReact>
-          {/* { infos.map(({ courses: { gps: el } }) => <p> {el.longitude} </p>)} */}
     </div>
   );
 }
