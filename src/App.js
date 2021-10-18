@@ -14,30 +14,17 @@ function App(props) {
     const infos = data.courses[0].gps;
     infos.map(el => setPositionLong(el.longitude) );
     infos.map(el => setPositionLat(el.latitude) );
-    console.log(positionLong, 'ooooooooooooo')
   };
   
   useEffect(() => {
     getPos();
-    console.log(positionLong, 'oi')
-    console.log(positionLat, 'ola')
   }, [positionLat, positionLong]);
-  
-    // let style = {
-    //   width: "1em",
-    //   height: "1em",
-    //   position: "absolute",
-    //   top: positionLong,
-    //   left: positionLat,
-    //   backgroundColor: "red"
-    // }
     
   const Car = () => <img src={car} className="car-sprite" alt="car"/>;
 
   return (
     <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
-          // bootstrapURLKeys={{ key: *** }}
           defaultCenter={props.center}
           defaultZoom={props.zoom}
         >
