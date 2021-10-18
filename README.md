@@ -2,6 +2,8 @@
 
 Este projeto foi desenvolvido com as ferramentas do Reactjs em conjunto com o Google Map React.
 
+Através da feature lucassneiva-softruck-app minha lógica foi estruturada.
+
 O React foi escolhido por ser uma ferramenta que eu gosto muito de usar, além de ter boa performance e possibilitar a escrita de um código conciso, limpo e componentes reutilizáveis.
 
 O Google Map React foi escolhido para dar uma melhor contextualização do marcador que estava sendo renderizado, diante sua localização geográfica, devidamente.
